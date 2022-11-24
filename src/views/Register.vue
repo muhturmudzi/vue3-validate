@@ -1,10 +1,10 @@
 <template>
   <section>
     <div class="container mx-auto">
-      <Form @submit="submitForm" :validation-schema="schema" :slot="{ errors }">
+      <Form @submit="submitForm" :validation-schema="schema" v-slot="{ errors }">
         <label for="nama">Nama</label>
-        <Field type="text" name="nama" v-model="form.nama"></Field>
-        <p>{{ errors }}</p>
+        <Field type="text" name="nama" v-model="form.nama" :validateOnInput="true"></Field>
+        <p>{{ errors.nama }}</p>
 
         <button type="submit">submit</button>
       </Form>
